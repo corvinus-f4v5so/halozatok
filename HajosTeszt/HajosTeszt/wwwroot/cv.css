@@ -1,0 +1,83 @@
+﻿body {
+    margin: 20px;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 5px;
+    color: white;
+    background-color: teal;
+    width: 200px;
+    display:inline-block;
+    width: 12%;
+}
+
+a:hover{     
+    background-color: aqua;        
+    color: black;    
+}
+
+#menu{
+    padding: 10px;
+    border: none;
+}
+
+img{
+    width: 600px;
+    border-radius: 15px;
+}
+
+div{
+    border: 2px solid green;
+    border-radius: 20px;
+    padding: 50px;
+}
+h1{
+    text-align:center;
+    font-size: 3em;
+}
+h2 {
+    text-align: center;
+}
+
+#tartcim{
+    text-align: left;
+}
+
+span{
+    font-size: 3em;
+    font-weight: bold;
+    color: purple;
+}
+
+.felsorolas{
+    background-color: yellow;
+}
+
+
+#tart li{
+    padding:7px;
+    width: 200px;
+    border: 2px solid black;
+}
+
+#kep{
+    text-align: center;
+}
+
+#soroz{
+    background-color: white;
+    border-radius: 20px;
+    width: 20%;
+    padding: 10px;
+    padding-left: 30px;
+}
+
+#kajasor{
+    font-style: italic;
+}
