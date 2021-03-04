@@ -1,0 +1,21 @@
+﻿*{
+    background-color: lightgreen;
+    font-family: sans-serif;
+}
+
+#hi{
+    font-size: 5em;
+    color: darkslategrey;
+}
+
+a {
+    text-decoration: none;
+    color: darkslategrey;
+    font-size: 2em;
+    transition: transform .2s;
+}
+
+a:hover{
+    color: purple;
+    font-size: 2.5em;
+}
