@@ -1,0 +1,99 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(white, #c0ded9);
+    font-family: sans-serif;
+    color: #3b3a30;
+    font-weight: 600;
+}
+div{
+    padding: 5px;
+    margin: 5px;
+}
+
+#main {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+#kozepso {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+#valaszok{
+    order: -1;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.valasz {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 20px;
+    background-color: #b2c2bf;
+}
+
+#kerdes {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #b2c2bf;
+}
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.gomb {
+    border: 1px solid black;
+    width: 80px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #b2c2bf;
+}
+
+.kattinthato:hover {
+    cursor: pointer;
+    background-color: #eaece5;
+}
+
+.jo {
+    background-color: green;
+    color: white;
+}
+
+.rossz {
+    background-color: red;
+    color: white;
+}
+
+#kep{
+    overflow: hidden;
+}
+
+img{
+    max-width: 100%;
+}
+
+@media screen and (max-width:1000px) {
+    
+    #html, body{
+        height: auto;
+    }
+
+    #kozepso {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+}
