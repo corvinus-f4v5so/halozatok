@@ -67,16 +67,16 @@ div{
 
 .kattinthato:hover {
     cursor: pointer;
-    background-color: #eaece5;
+    background-color: #eaece5!important;
 }
 
 .jo {
-    background-color: green;
+    background-color: #99ff99;
     color: white;
 }
 
 .rossz {
-    background-color: red;
+    background-color: #ff9999;
     color: white;
 }
 
