@@ -30,7 +30,7 @@ function kérdésBetöltés(id, destination) {
 
             }
         }
-        )
+    )
         .then(q => {
             hotList[destination].question = q;
             hotList[destination].goodAnswers = 0;
@@ -67,6 +67,10 @@ function init() {
                 nextQuestion++
             }
     }
+
+    fetch("questions/count")
+        .then(result => result.Text())
+        .then(n => { numberOfQuestions = parseInt(n) })
 }
 
 function kérdésMegjelenítés() {
@@ -124,12 +128,18 @@ valasz1.onclick = function () {
         window.localStorage.setItem("lista", JSON.stringify(hotList))
 
         if (hotList[displayedQuestion].goodAnswers == 3) {
-                        
-            kérdésBetöltés(nextQuestion, displayedQuestion)           
+            if (numberOfQuestions != nextquestion) {
+                kérdésBetöltés(nextQuestion, displayedQuestion)
+
+                hotList[displayedQuestion].goodAnswers = 0;
+                window.localStorage.setItem("next", nextQuestion)
+                nextQuestion++
+            }
+            else {
+                console.log("nincs több kérdés")
+                return;
+                    }
             
-            hotList[displayedQuestion].goodAnswers = 0;
-            window.localStorage.setItem("next", nextQuestion)
-            nextQuestion++
             
         }
     }
@@ -156,13 +166,17 @@ valasz2.onclick = function () {
         hotList[displayedQuestion].goodAnswers++
         window.localStorage.setItem("lista", JSON.stringify(hotList))
 
-        if (hotList[displayedQuestion].goodAnswers == 3) {            
-            kérdésBetöltés(nextQuestion, displayedQuestion)
-            hotList[displayedQuestion].goodAnswers = 0;
-            window.localStorage.setItem("next", nextQuestion)
-            window.localStorage.setItem("lista", JSON.stringify(hotList))
-            nextQuestion++
-            
+        if (hotList[displayedQuestion].goodAnswers == 3) {   
+            if (numberOfQuestions != nextquestion) {
+                kérdésBetöltés(nextQuestion, displayedQuestion)
+                hotList[displayedQuestion].goodAnswers = 0;
+                window.localStorage.setItem("next", nextQuestion)
+                nextQuestion++
+            }
+            else {
+                console.log("nincs több kérdés")
+                return;
+            }    
         }
     }
     else {
@@ -190,12 +204,16 @@ valasz3.onclick = function () {
         window.localStorage.setItem("lista", JSON.stringify(hotList))
 
         if (hotList[displayedQuestion].goodAnswers == 3) {
-            
-            kérdésBetöltés(nextQuestion, displayedQuestion)
-            hotList[displayedQuestion].goodAnswers = 0;
-            window.localStorage.setItem("next", nextQuestion)
-            nextQuestion++
-            
+            if (numberOfQuestions != nextquestion) {
+                kérdésBetöltés(nextQuestion, displayedQuestion)
+                hotList[displayedQuestion].goodAnswers = 0;
+                window.localStorage.setItem("next", nextQuestion)
+                nextQuestion++
+            }
+            else {
+                console.log("nincs több kérdés")
+                return;
+            }
         }
     }
     else {
