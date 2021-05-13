@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Funny Jokes</title>
+</head>
+<body>
+    <form>
+
+        <div>
+            <input id="jokeText" type="text" placeholder="Csak PC vicc :)" />
+        </div>
+        <button id="addButton">Új vicc felvétele</button>
+        <div id="jokeList"></div>
+    </form>
+    <script>
+        var jokeList = [];
+
+        window.onload = function () {
+            fetch(`api/jokes`)
+            .then(response => response.json())
+            .then(data => listazas(data))
+        }
+
+        function listazas(lista) {
+            for (var i = 0; i < lista.length; i++) {
+                console.log(lista[i])
+                if (lista[i].jokeText != null) {
+                    if (lista[i].jokeText.length != 0) {
+
+                        let ujSor = document.createElement("br");
+                        let ujVicc = document.createElement("div");
+                        ujVicc.innerText = lista[i].jokeText;
+                        document.getElementById("jokeList").appendChild(ujVicc);
+                        document.getElementById("jokeList").appendChild(ujSor);
+                    }
+                }                
+            }            
+        }
+
+
+        document.getElementById("addButton").addEventListener("click", () => {
+
+            let data = {
+                jokeText: document.getElementById("jokeText").value
+            }
+            
+            fetch("api/jokes",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }
+                ).then(x => {
+                    if (x.ok) console.log("Siker");
+                    else console.log("Kudarc");
+                });
+        });
+
+    </script>
+</body>
+</html>
